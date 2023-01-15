@@ -36,7 +36,7 @@ export default function Form(props) {
       min_customers: minCustomers || "None",
       max_customers: maxCustomers || "None",
       avg_cookies: avgCookies || "None",
-      hourlySales: cookie || [48,42,30,24,42,24,36,42,42,48,36,42,24,36,516],
+      hourlySales: cookie || [60,40,80,24,42,24,36,42,42,48,36,42,24,36,605],
       
     };
     props.getUserInput(output);
