@@ -1,8 +1,11 @@
 import React from "react";
+import { useContext } from "react";
+import { ThemeContext } from "../contexts/theme";
 
 export default function Header() {
+  const { isDarkTheme, toggleThemeHandler } = useContext(ThemeContext);
   return (
-    <header className="py-5 bg-orange-700 text-white">
+    <header className="py-5 bg-orange-600 dark:bg-orange-700 text-white">
       <nav className='flex justify-between' >
           <span className='text-2xl ml-4' >Cookie Stand Admin</span>
         <div className="flex justify-between mr-8">
@@ -20,7 +23,7 @@ export default function Header() {
                 href="about"
                 className="text-white text-xl hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-sky-400 md:p-0"
               >
-                About Us
+                About
               </a>
             </li>
             
@@ -33,6 +36,11 @@ export default function Header() {
               </a>
             </li>
           </ul>
+          <button
+                            type="button"
+                            className="py-1 sm:py-2.5 px-2 sm:px-5 mr-2 bg-zinc-300 text-black dark:bg-slate-800 dark:text-white rounded"
+                            onClick={toggleThemeHandler}
+                        >Toggel Theme</button>
         </div>
       </nav>
     </header>
